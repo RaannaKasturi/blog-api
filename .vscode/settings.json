@@ -1,0 +1,101 @@
+{
+  "psi-header.config": {
+    "forceToTop": true,
+    "blankLinesAfter": 1,
+    "spacesBetweenYears": false,
+    "license": "Apache-2.0",
+    "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+    "author": "Nayan (Raanna) Kasturi",
+    "initials": "NK",
+    "authorEmail": "raanna@binarybiology.top",
+    "company": "Binary Biology",
+    "copyrightHolder": "Binary Biology",
+    "creationDateZero": "asIs",
+    "hostname": "binarybiology.top",
+    "overridePathSeparator": "/"
+  },
+  "psi-header.changes-tracking": {
+    "isActive": true,
+    "modAuthor": "Modified By:",
+    "modDate": "Last Modified:",
+    "modDateFormat": "dd/MM/yyyy hh:nn:ss",
+    "include": [".ts"],
+    "includeGlob": [],
+    "exclude": ["markdown", "json", "jsonc", "shellscript"],
+    "excludeGlob": ["./**/*/ignoreme.*"],
+    "autoHeader": "autoSave",
+    "enforceHeader": true,
+    "replace": ["Filename:", "Project"],
+    "updateLicenseVariables": true
+  },
+  "psi-header.variables": [
+    ["manager", "Nayan Kasturi"],
+    ["projectCreationYear", "2025"],
+    ["file_description", ""],
+    ["department", ""]
+  ],
+  "psi-header.lang-config": [
+    {
+      "language": "javascript",
+      "begin": "/*",
+      "prefix": " * ",
+      "suffix": " *",
+      "lineLength": 80,
+      "end": " */",
+      "forceToTop": true,
+      "blankLinesAfter": 3,
+      "beforeHeader": [],
+      "afterHeader": [],
+      "rootDirFileName": "package.json",
+      "modAuthor": "Modified By:",
+      "modDate": "Last Modified:",
+      "modDateFormat": "dd/MM/yyyy hh:nn:ss",
+      "replace": ["Filename:", "Project"],
+      "ignoreLines": []
+    },
+    {
+      "language": "typescript",
+      "mapTo": "javascript"
+    }
+  ],
+  "psi-header.templates": [
+    {
+      "language": "javascript",
+      "template": [
+        "File: <<filename>>",
+        "Project: <<projectname>>",
+        "Created Date: <<date>>",
+        "Author: <<author>>",
+        "-----",
+        "Last Modified: <<date>>",
+        "Modified By: <<author>>",
+        "-----",
+        "Copyright (c) <<yeartoyear(fc, now)>> <<company>>. All rights reserved.",
+        "License: Apache-2.0",
+        "License URL: <<licenseUrl>>",
+        "Contact: <<authorEmail>>",
+        "----------\t---\t---------------------------------------------------------"
+      ],
+      "changeLogCaption": "HISTORY",
+      "changeLogHeaderLineCount": 2,
+      "changeLogEntryTemplate": [
+        "",
+        "<<dateformat('DD-MM-YYYY')>>\t<<initials>>\t"
+      ],
+      "changeLogNaturalOrder": false,
+      "changeLogFooterLineCount": 0
+    },
+    {
+      "language": "typescript",
+      "mapTo": "javascript"
+    }
+  ],
+  "psi-header.license-text": [
+    "This will never show because it is only relevant if",
+    "psi-header.config.license equals Custom"
+  ],
+  "psi-header.license-reference": {
+    "uri": "LICENSE",
+    "uriIsLocalFile": true
+  }
+}
