@@ -19,8 +19,8 @@
 import { rateLimit } from 'express-rate-limit';
 
 const limiter = rateLimit({
-    windowMs: 10 * 1000, // 5 seconds
-    limit: 10, // Limit each IP to 100 requests per `window` (here, per 1 minute)
+    windowMs: 10 * 1000, // 10 seconds
+    limit: 10, // Limit each IP to 10 requests per `window` (here, per 10 seconds)
     standardHeaders: 'draft-8', // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
     message: {
