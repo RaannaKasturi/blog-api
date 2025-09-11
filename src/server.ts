@@ -23,7 +23,10 @@ import compression from 'compression';
 import helmet from 'helmet';
 
 import config from '@/config';
+import { connectToDatabase, disconnectFromDatabase } from '@/lib/mongoose';
 import rateLimiter from '@/lib/express_rate_limit';
+import v1Routes from '@/routes/v1';
+import { logger } from './lib/winston';
 
 const app = express();
 
@@ -34,7 +37,7 @@ const corsOptions: CorsOptions = {
             callback(null, true);
         } else {
             callback(new Error(`CORS policy: No access from origin ${requestOrigin}`), false);
-            console.log(`CORS policy: No access from origin ${requestOrigin}`);
+            logger.warn(`CORS policy: No access from origin ${requestOrigin}`);
         }
     },
 }
@@ -63,22 +66,19 @@ app.use(helmet());
 app.use(rateLimiter);
 (async () => {
     try {
-        // Base route
-        app.get('/', (req, res) => {
-            res.json({ message: 'Hello, World!' });
-        });
+        // Connect to the database
+        await connectToDatabase();
 
-        // Ping route
-        app.get('/ping', (req, res) => {
-            res.json({ message: 'pong' });
-        });
+        // API Version 1 routes
+        app.use('/api/v1', v1Routes);
 
         // Start the server
-        app.listen(3000, () => {
-            console.log(`Server is running on http://localhost:${config.PORT}`);
+        app.listen(config.PORT, () => {
+            logger.info(`Server is running on http://localhost:${config.PORT}`);
         });
+
     } catch (error) {
-        console.error('Error starting server:', error);
+        logger.error('Error starting server:', error);
 
         if (config.NODE_ENV === 'production') {
             process.exit(1); // Exit the process with failure
@@ -86,3 +86,19 @@ app.use(rateLimiter);
     }
 })();
 
+// Handle Server Shutdown Gracefully
+const handleServerShutdown = async () => {
+    try {
+        // Disconnect from the database
+        await disconnectFromDatabase();
+
+        logger.info('Shutting down server gracefully...');
+        process.exit(0);
+    } catch (error) {
+        logger.error('Error during server shutdown:', error);
+    }
+}
+
+// Listen for termination signals
+process.on('SIGINT', handleServerShutdown);
+process.on('SIGTERM', handleServerShutdown);

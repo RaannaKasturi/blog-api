@@ -1,10 +1,10 @@
 /*
- * File: index.ts                                                              *
+ * File: auth.ts                                                               *
  * Project: blog-api                                                           *
- * Created Date: Wed Sep 10 2025                                               *
+ * Created Date: Thu Sep 11 2025                                               *
  * Author: Nayan (Raanna) Kasturi                                              *
  * -----                                                                       *
- * Last Modified: Wed Sep 10 2025                                              *
+ * Last Modified: Thu Sep 11 2025                                              *
  * Modified By: Nayan (Raanna) Kasturi                                         *
  * -----                                                                       *
  * Copyright (c) 2025 Binary Biology. All rights reserved.                     *
@@ -16,20 +16,14 @@
 
 
 
-import dotenv from 'dotenv';
+import register from '@/controllers/v1/auth/register';
+import { Router } from 'express';
 
-dotenv.config({
-    override: true,
-});
+// controllers
 
-const config = {
-    PORT: process.env.PORT || 3000,
-    NODE_ENV: process.env.NODE_ENV,
-    WHITELIST_ORIGINS: [
-        'http://localhost:3000',
-    ],
-    MONGO_URI: process.env.MONGO_URI,
-    LOG_LEVEL: process.env.LOG_LEVEL || 'info',
-}
+const authRouter = Router();
 
-export default config;
+// Register route
+authRouter.post('/register', register);
+
+export default authRouter;
