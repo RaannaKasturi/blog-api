@@ -74,7 +74,7 @@
         "License: Apache-2.0",
         "License URL: <<licenseUrl>>",
         "Contact: <<authorEmail>>",
-        "----------\t---\t---------------------------------------------------------"
+        "--------------------------------------------------------------------------"
       ],
       "changeLogCaption": "HISTORY",
       "changeLogHeaderLineCount": 2,

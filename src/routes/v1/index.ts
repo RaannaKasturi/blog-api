@@ -1,3 +1,21 @@
+/*
+ * File: index.ts                                                              *
+ * Project: blog-api                                                           *
+ * Created Date: Mon Sep 15 2025                                               *
+ * Author: Nayan (Raanna) Kasturi                                              *
+ * -----                                                                       *
+ * Last Modified: Mon Sep 15 2025                                              *
+ * Modified By: Nayan (Raanna) Kasturi                                         *
+ * -----                                                                       *
+ * Copyright (c) 2025 Binary Biology. All rights reserved.                     *
+ * License: Apache-2.0                                                         *
+ * License URL: https://www.apache.org/licenses/LICENSE-2.0                    *
+ * Contact: raanna@binarybiology.top                                           *
+ * --------------------------------------------------------------------------  *
+ */
+
+
+
 import express from "express";
 
 import authRouter from "./auth";
