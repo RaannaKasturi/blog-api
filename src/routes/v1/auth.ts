@@ -90,7 +90,6 @@ authRouter.post(
     login,
 );
 
-
 // Refresh Token Route
 authRouter.post(
     '/refresh-token',
