@@ -20,7 +20,7 @@ const consoleFormat = combine(
 const transports: winston.transport[] = [];
 
 const logtail = new Logtail(config.LOGTAIL_SOURCE_TOKEN, {
-    endpoint: config.LOGTAIL_INGESTION_HOST,
+    endpoint: `https://${config.LOGTAIL_INGESTION_HOST}`,
 });
 
 if (config.NODE_ENV === 'production') {
