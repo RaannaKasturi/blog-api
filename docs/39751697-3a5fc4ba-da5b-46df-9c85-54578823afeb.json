@@ -105,9 +105,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/auth/logout",
+							"raw": "{{baseRemoteURL}}/auth/logout",
 							"host": [
-								"{{baseURL}}"
+								"{{baseRemoteURL}}"
 							],
 							"path": [
 								"auth",
