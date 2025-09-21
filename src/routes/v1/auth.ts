@@ -25,6 +25,8 @@ import User from '@/models/user';
 import login from '@/controllers/v1/auth/login';
 import bcrypt from 'bcrypt';
 import refreshToken from '@/controllers/v1/auth/refresh-token';
+import logout from '@/controllers/v1/auth/logout';
+import authenticate from '@/middlewares/authenticate';
 
 // controllers
 
@@ -98,6 +100,12 @@ authRouter.post(
         .isJWT().withMessage("Refresh Token must be a valid JWT"),
     validationError,
     refreshToken
+);
+
+authRouter.post(
+    '/logout',
+    authenticate,
+    logout,
 );
 
 export default authRouter;

@@ -30,7 +30,7 @@ import { logger } from './lib/winston';
 
 const app = express();
 
-// Trust proxy settings (if behind a proxy like Apache)
+// Trust proxy settings
 app.set('trust proxy', '127.0.0.1');
 
 // CORS Options
