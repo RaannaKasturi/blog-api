@@ -61,9 +61,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/auth/login",
+							"raw": "{{baseRemoteURL}}/auth/login",
 							"host": [
-								"{{baseURL}}"
+								"{{baseRemoteURL}}"
 							],
 							"path": [
 								"auth",
