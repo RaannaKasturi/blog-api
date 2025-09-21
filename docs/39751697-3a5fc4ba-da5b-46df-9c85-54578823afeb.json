@@ -226,6 +226,11 @@
 		{
 			"key": "accessToken",
 			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NTg0MzYwMTQsImV4cCI6MTc1ODUyMjQxNCwic3ViIjoiQWNjZXNzVG9rZW4ifQ.GA9cB-dY288bJMVP4hbwvVPTnra2f6xqnhTj4MDP4Mc"
+		},
+		{
+			"key": "baseRemoteURL",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
