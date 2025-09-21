@@ -198,7 +198,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "372679da-2d56-4146-a83f-8e1343c55666",
+				"id": "8ed33a23-1d9a-489a-890e-b35f218d3025",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -209,7 +209,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d4f09c92-271f-4336-bf34-861fb8efb9a7",
+				"id": "dadeb87e-6373-4cc6-96bd-fa78d1759d39",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -220,17 +220,12 @@
 	],
 	"variable": [
 		{
-			"key": "baseURL",
-			"value": "http://localhost:3000/api/v1"
+			"key": "baseRemoteURL",
+			"value": "http://api.binarybiology.top/api/v1"
 		},
 		{
 			"key": "accessToken",
 			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NTg0MzYwMTQsImV4cCI6MTc1ODUyMjQxNCwic3ViIjoiQWNjZXNzVG9rZW4ifQ.GA9cB-dY288bJMVP4hbwvVPTnra2f6xqnhTj4MDP4Mc"
-		},
-		{
-			"key": "baseRemoteURL",
-			"value": "",
-			"type": "default"
 		}
 	]
 }
