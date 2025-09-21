@@ -26,7 +26,7 @@ import config from '@/config';
 import { connectToDatabase, disconnectFromDatabase } from '@/lib/mongoose';
 import rateLimiter from '@/lib/express_rate_limit';
 import v1Routes from '@/routes/v1';
-import { logger } from './lib/winston';
+import { logger, logtail } from '@/lib/winston';
 
 const app = express();
 
@@ -96,6 +96,7 @@ const handleServerShutdown = async () => {
         await disconnectFromDatabase();
 
         logger.info('Shutting down server gracefully...');
+        logtail.flush(); // Ensure all logs are sent before exiting
         process.exit(0);
     } catch (error) {
         logger.error('Error during server shutdown:', error);

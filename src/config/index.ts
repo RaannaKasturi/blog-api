@@ -40,6 +40,8 @@ const config = {
     JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET!,
     JWT_ACCESS_EXPIRY: process.env.JWT_ACCESS_EXPIRY as ms.StringValue,
     JWT_REFRESH_EXPIRY: process.env.JWT_REFRESH_EXPIRY as ms.StringValue,
+    LOGTAIL_SOURCE_TOKEN: process.env.LOGTAIL_SOURCE_TOKEN!,
+    LOGTAIL_INGESTION_HOST: process.env.LOGTAIL_INGESTION_HOST!,
 }
 
 export default config;
