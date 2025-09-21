@@ -182,9 +182,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/ping",
+					"raw": "{{baseRemoteURL}}/ping",
 					"host": [
-						"{{baseURL}}"
+						"{{baseRemoteURL}}"
 					],
 					"path": [
 						"ping"
